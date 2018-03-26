@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhkj.zwb.onetomanyentity">
+
+    <class name="EmpEntity" table="DB_EMP">
+        <id name="eid" column="EID" length="32">
+            <generator class="uuid"/>
+        </id>
+        <property name="ename" type="string" column="ENAME" length="18"/>
+        <many-to-one name="dept" class="DeptEntity" column="FDID"></many-to-one>
+    </class>
+
+</hibernate-mapping>

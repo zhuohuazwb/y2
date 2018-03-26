@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhkj.zwb.onetooneentity">
+
+    <class name="PersonEntity" table="DB_PERSON">
+        <id name="pid" column="PID" type="string" length="32">
+            <generator class="assigned"/>
+        </id>
+        <property name="pname" type="string" column="PNAME" length="50"/>
+        <one-to-one name="card" class="CardEntity" cascade="all"></one-to-one>
+    </class>
+
+</hibernate-mapping>
