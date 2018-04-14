@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.zhkj.zwb.entity">
+
+    <class name="Questions" table="questions">
+        <id name="id" column="id" length="11">
+            <generator class="uuid"/>
+        </id>
+        <property name="title" type="string" column="title" length="100"/>
+        <property name="ctailDesc" type="string" column="ctailDesc" length="300"/>
+        <property name="answerCount" type="int" column="answerCount"/>
+        <property name="fastModified" type="date" column="fastModified"/>
+        <set name="questions" cascade="all" lazy="false" inverse="false">
+            <key column="qid"></key>
+            <one-to-many class="Answers"></one-to-many>
+        </set>
+    </class>
+    revoke 撤回
+    identity 身份
+    sequence 顺序
+    reverse 倒转
+    temporary 暂时的
+    partition 分区
+
+</hibernate-mapping>
