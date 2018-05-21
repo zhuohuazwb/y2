@@ -1,0 +1,4 @@
+rootProject.name = 'session'
+include 'register-center'
+include 'order-server'
+
